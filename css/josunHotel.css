@@ -7,10 +7,6 @@
   --tit : 24px;
   --subTit : 14px;
 
-  --whiteTxt : #f2f2f2;
-  --blackTxt : #1A1A1A;
-  
-  --engFont : "Ibarra Real Nova";
   --time : 13px;
   --hotel-header-height: 100px;
   --dining-title-size: var(--tit);
@@ -188,7 +184,7 @@ header {
 
 .group-list a:hover,
 .group-list a:focus-visible {
-  background-color: #eee;
+  background-color: var(--whiteTxt);
 }
 
 /* 호텔 전용 GNB: 태블릿에서는 메뉴를 아래 줄로 배치 */
