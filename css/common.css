@@ -69,12 +69,12 @@ footer {
 }
 
 .footer-gnb {
-    font-size: 30px;
+    font-size: 32px;
     line-height: 1.3;
 }
 
 .footer-inform {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 300;
     line-height: 1.95;
 }
@@ -214,7 +214,7 @@ footer a:focus-visible,
     footer .search-wrap > div:first-of-type img { width: 26px; height: 26px; }
     .footer-search { padding-right: 30px; }
     .footer-logo { grid-row: 2; font-size: 13.8vw; margin-bottom: 20px; }
-    .footer-gnb { grid-column: 1 / -1; grid-row: 3; font-size: clamp(10px, 3.1vw, 16px); }
+    .footer-gnb { grid-column: 1 / -1; grid-row: 3; font-size: 14px; }
     .footer-gnb > ul { flex-direction: row; justify-content: space-between; gap: 8px; }
     .footer-gnb a { white-space: nowrap; }
 
@@ -224,7 +224,7 @@ footer a:focus-visible,
         flex-direction: row;
         flex-wrap: wrap;
         gap: 8px 14px;
-        font-size: 12px;
+        font-size: 14px;
         line-height: 1.5;
         padding-right: 100px;
     }

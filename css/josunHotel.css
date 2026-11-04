@@ -1247,10 +1247,7 @@ section{margin-bottom: 120px;}
     grid-row: 3;
   }
 
-  .mobile-dining .dining-detail-list {
-    /* gap: 24px; */
-  }
-
+  
   .mobile-dining .dining-detail-list > li > ul {
     gap: 24px;
     min-height: 230px;
