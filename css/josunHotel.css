@@ -46,10 +46,14 @@ section{margin-bottom: 120px;}
 
 
 .hero-logo {
-  width: clamp(170px, 20vw, 745px);
+  width: clamp(170px, 38vw, 845px);
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.hero-logo img {
+  width: 100%;
 }
 
 
@@ -68,6 +72,7 @@ section{margin-bottom: 120px;}
   width: max-content;
   padding: clamp(5px, 1vw, 15px) clamp(5px, 2.5vw, 35px);
   display: flex; justify-content: center; align-items: center; gap: 3px;
+  cursor: pointer;
 }
 
 .checkin {
@@ -82,7 +87,8 @@ section{margin-bottom: 120px;}
 
 .search {
   background-color: var(--whiteTxt); color: var(--blackTxt);
-  font-size: clamp(11px, 1.2vw, 48px);
+  font-size: clamp(11px, 1.2vw, 48px); font-family: var(--engFont);
+  font-weight: 500;
 }
 
 
@@ -292,26 +298,18 @@ section{margin-bottom: 120px;}
 
 
 .facility-wrap > .more-btn {
-  box-sizing: border-box;
-  width: clamp(180px, 38vw, 290px);
-  padding: 14px 38px 14px 18px;
-  font-size: clamp(14px, 2vw, 20px);
   margin-top: clamp(40px, 8vw, 80px);
-}
-
-.facility-wrap > .more-btn img {
-  right: 18px;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 
 .more-btn {
-  width: 150px; text-align: center;
-  padding: 10px 25px 10px 10px;
+  box-sizing: border-box;
+  width: min(240px, 100%); text-align: center;
+  padding: 14px 20px;
+  display: flex; justify-content: center; align-items: center; gap: 5px;
   border: 1px solid #fff;
   color: var(--whiteTxt);
-  font-family: var(--engFont); font-weight: normal; font-size: var(--subTit);
+  font-family: var(--engFont); font-weight: normal; font-size: clamp(14px, 2.2vw, 24px);
   position: relative;
   left: 50%; transform: translateX(-50%);
   margin-top: 40px;
@@ -319,9 +317,8 @@ section{margin-bottom: 120px;}
 }
 
 .more-btn img {
-  width: 17px;
-  position: absolute;
-  right: 30px; top: 14px;
+  width: clamp(17px, 1.8vw, 34px);
+  flex-shrink: 0;
 }
 
 .more-btn img.black{display: none;}
@@ -977,6 +974,14 @@ section{margin-bottom: 120px;}
 
 /* -------------------- PC · 1100px 이상 -------------------- */
 @media (min-width: 1100px) {
+  .room {
+    font-size: 32px;
+  }
+
+  .room img {
+    margin-bottom: 60px;
+  }
+
   .membership-card-list > li:hover > ul {
     transform: rotateY(180deg);
   }
@@ -986,6 +991,7 @@ section{margin-bottom: 120px;}
   }
 
   .room-detail-wrap {
+    height: 720px;
     margin-bottom: 200px;
   }
 
@@ -1020,7 +1026,7 @@ section{margin-bottom: 120px;}
   }
 
   .mobile-dining .dining-detail-list {
-    gap: 24px;
+    /* gap: 24px; */
   }
 
   .mobile-dining .dining-detail-list > li > ul {
@@ -1037,15 +1043,15 @@ section{margin-bottom: 120px;}
     font-size: 16px;
   }
 
-  /* 커진 가격 글자가 식사명과 겹치지 않도록 공간 확보하기 */
   .mobile-dining .dining-detail-list .detail {
-    padding-bottom: 168px;
+    display: none;
+    padding-bottom: 0;
   }
 
   .mobile-dining .dining-detail-list .dining-price {
+    position: static;
     font-size: 16px;
     line-height: 1.5;
-    display: none;
   }
 
   .mobile-dining .dining-description {
@@ -1055,6 +1061,7 @@ section{margin-bottom: 120px;}
     color: var(--whiteTxt);
   }
 
+  
   .dining-description h2 {
     font-size: 40px;
     font-weight: 400;
@@ -1066,17 +1073,7 @@ section{margin-bottom: 120px;}
     grid-row: 4;
     justify-self: start;
     margin-left: calc(44% + 24px);
-    align-self: end;
-    box-sizing: border-box;
-    width: 240px;
-    padding: 14px 44px 14px 20px;
-    font-size: 24px;
-  }
-
-  .mobile-dining > .more-btn img {
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
+    align-self: center;
   }
 
   .facility-imgs > li:nth-child(2) {
@@ -1094,7 +1091,7 @@ section{margin-bottom: 120px;}
 
   .facility-list > li {
     width: 56%;
-    /* 화면 높이도 기준으로 삼아 사진과 설명을 함께 볼 수 있도록 설정하기 */
+    /* 화면 높이도 기준으로 삼아 사진과 설명을 함께 볼 수 있도록 설정 */
     max-width: clamp(320px, calc((100svh - 400px) * 1.5), 812px);
   }
 
@@ -1165,25 +1162,17 @@ section{margin-bottom: 120px;}
   }
 
   .membership-tit > .more-btn {
-    box-sizing: border-box;
-    width: min(100%, 300px);
     margin-top: auto;
     left: auto;
     transform: none;
-    padding: 16px 44px 16px 20px;
-    font-size: clamp(20px, 1.7vw, 28px);
-  }
-
-  .membership-tit > .more-btn img {
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
   }
   
   .membership-tit > li:nth-child(2),
   .membership-tit > li:nth-child(3) {
     display: block;
   }
+
+  .membership-tit > li.more-btn { display: flex; }
 
   .membership-card-list > li:last-child {
     display: block;

@@ -2,13 +2,13 @@ $(document).ready(function() {
   
 
 
-  // -------다이닝 가격 표시-------
+  // -------다이닝 시간·가격 표시-------
 
   const diningDesktop = window.matchMedia('(min-width: 1100px)');
 
-  // 화면 크기가 바뀌면 애니메이션 스타일을 지우고 가격 표시 상태 맞추기
+  // 화면 크기가 바뀌면 애니메이션 스타일을 지우고 상세 정보 표시 상태 맞추기
   function updateDiningPrice() {
-    const diningPrices = $(".dining-detail-list .dining-price");
+    const diningPrices = $(".dining-detail-list .detail");
     diningPrices.stop(true, true).css({
       height: "",
       overflow: "",
@@ -30,13 +30,13 @@ $(document).ready(function() {
 
   $(".dining-detail-list > li").mouseenter(function() {
     if (diningDesktop.matches) {
-      $(this).find(".dining-price").stop(true, true).slideDown(300);
+      $(this).find(".detail").stop(true, true).slideDown(300);
     }
   })
 
   $(".dining-detail-list > li").mouseleave(function() {
     if (diningDesktop.matches) {
-      $(this).find(".dining-price").stop(true, true).slideUp(300);
+      $(this).find(".detail").stop(true, true).slideUp(300);
     }
   })
   // 모바일·태블릿에서 카드를 누를 때 앞뒷면 전환하기
