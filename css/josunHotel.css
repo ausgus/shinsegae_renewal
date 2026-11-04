@@ -392,7 +392,6 @@ section{margin-bottom: 120px;}
 .mobile-dining .dining-detail-list .dining-price {
   width: 100%; font-weight: 300; font-size: 11px;
   background-color: #9A6D6D; padding: 10px 3px;
-  display: none;
 }
 
 /* .mobile-dining .dining-detail-list > li:hover .dining-price {display: block;} */
@@ -737,9 +736,6 @@ section{margin-bottom: 120px;}
 }
 
 
-.membership-card-list > li:hover > ul {
-  transform: rotateY(180deg);
-}
 
 /* -------------------- 모바일 전용 · 768px 이하 -------------------- */
 @media (max-width: 768px) {
@@ -796,6 +792,15 @@ section{margin-bottom: 120px;}
 
 /* -------------------- 모바일·태블릿 공통 · 1099px 이하 -------------------- */
 @media (max-width: 1099px) {
+  /* 카드를 누를 때 앞뒷면 전환하기 */
+  .membership-card-list > li {
+    cursor: pointer;
+  }
+
+  .membership-card-list > li.is-flipped > ul {
+    transform: rotateY(180deg);
+  }
+
   /* 터치 화면에서는 LP가 나온 상태로 계속 회전하기 */
   .facility-imgs > li:nth-child(2) {
     transform: translate(0, -50%);
@@ -967,6 +972,10 @@ section{margin-bottom: 120px;}
 
 /* -------------------- PC · 1100px 이상 -------------------- */
 @media (min-width: 1100px) {
+  .membership-card-list > li:hover > ul {
+    transform: rotateY(180deg);
+  }
+
   .mainhero-wrap {
     margin-bottom: 200px;
   }
@@ -1031,6 +1040,7 @@ section{margin-bottom: 120px;}
   .mobile-dining .dining-detail-list .dining-price {
     font-size: 16px;
     line-height: 1.5;
+    display: none;
   }
 
   .mobile-dining .dining-description {
