@@ -13,8 +13,27 @@
   --engFont : "Ibarra Real Nova";
   --time : 13px;
   --hotel-header-height: 100px;
+  --dining-title-size: var(--tit);
+
+  --room-deluxe-mask: url('../images/hotel/deluxe.png');
+  --room-thesuite-mask: url('../images/hotel/thesuite.png');
+  --room-hillsuite-mask: url('../images/hotel/hillsuite.png');
+  --room-royalsuite-mask: url('../images/hotel/royalsuite.png');
+  --room-deluxefamily-mask: url('../images/hotel/deluxefamily.png');
 }
 
+/* 화면 크기에 따라 바뀌는 변수도 위에서 함께 관리 */
+@media (max-width: 1099px) {
+  :root { --hotel-header-height: 136px; }
+}
+
+@media (max-width: 768px) {
+  :root { --hotel-header-height: 176px; }
+}
+
+@media (min-width: 769px) {
+  :root { --dining-title-size: clamp(40px, 5vw, 72px); }
+}
 
 body {
   font-family: "Noto Sans";
@@ -55,6 +74,7 @@ header {
   display: flex; gap: clamp(12px, 1.4vw, 24px);
   align-items: center;
   line-height: 1.5;
+  font-weight: 300;
 }
 
 .gnb a {
@@ -85,14 +105,15 @@ header {
 
 .group-list-wrap > li:first-child {
   width: 100%; height: auto;
-  display: flex; gap: 20px; justify-content: center; align-items: center;
+  display: flex; gap: clamp(20px, 2.5vw, 48px);
+  justify-content: center; align-items: center;
   position: relative;
 }
 
 .group-list-wrap > li:first-child::before {
   content: '';
   display: block;
-  width: 3px; height: 30px;
+  width: 1px; height: 30px;
   background-color: var(--whiteTxt);
 }
 
@@ -172,7 +193,6 @@ header {
 
 /* 호텔 전용 GNB: 태블릿에서는 메뉴를 아래 줄로 배치 */
 @media (max-width: 1099px) {
-  :root { --hotel-header-height: 136px; }
 
   .header-wrap {
     width: 90%;
@@ -206,7 +226,6 @@ header {
 
 /* 모바일에서는 메뉴 6개를 3개씩 두 줄로 배치 */
 @media (max-width: 768px) {
-  :root { --hotel-header-height: 176px; }
 
   .header-wrap { grid-template-rows: 80px 95px; }
   .header-wrap #logo img { width: 140px; }
@@ -270,7 +289,7 @@ section{margin-bottom: 120px;}
 .hero-logo {
   width: clamp(170px, 38vw, 845px);
   position: absolute;
-  top: 47%; left: 50%;
+  top: 50%; left: 50%;
   transform: translate(-50%, -50%);
 }
 
@@ -292,7 +311,7 @@ section{margin-bottom: 120px;}
 .checkin,
 .search {
   width: max-content;
-  padding: clamp(5px, 1vw, 15px) clamp(5px, 2.5vw, 35px);
+  padding: clamp(5px, 2vw, 20px) clamp(5px, 3.5vw, 40px);
   display: flex; justify-content: center; align-items: center; gap: 3px;
   cursor: pointer;
 }
@@ -570,12 +589,18 @@ section{margin-bottom: 120px;}
 }
 
 
-.mobile-dining .dining-tit h2 {font-size: var(--subTit); font-weight: 300; margin-bottom: 8px;}
-.mobile-dining .dining-tit h1 {font-size: var(--tit); font-family: var(--engFont);}
+.mobile-dining .dining-tit h2 {font-size: clamp(var(--subTit), 2vw, 17px); font-weight: 300; margin-bottom: 8px;}
+.mobile-dining .dining-tit h1 {font-size: var(--dining-title-size); font-family: var(--engFont); line-height: 1;}
+
+.mobile-dining .dining-tit > .line {
+  height: var(--dining-title-size);
+  display: flex;
+  align-items: center;
+}
 
 .mobile-dining .dining-tit > .line img{
   width: 110%;
-  transform: translate(clamp(-8%, -2vw, -16%), 4px);
+  transform: translateX(clamp(-8%, -2vw, -16%));
 }
 
 .mobile-dining .dining-img img {width: 100%;}
@@ -600,7 +625,7 @@ section{margin-bottom: 120px;}
 }
 
 .mobile-dining .dining-detail-list > li h2 {
-  font-weight: 500; font-size: var(--subTit);
+  font-weight: 500; font-size: clamp(14px, 2vw, 18px);
 }
 
 .mobile-dining .dining-detail-list .detail p{
@@ -959,11 +984,26 @@ section{margin-bottom: 120px;}
 /* -------------------- 모바일 전용 · 768px 이하 -------------------- */
 @media (max-width: 768px) {
   /* 각 사진을 마스크로 사용해 같은 모양의 배경 깔기 */
-  .room.deluxe { --room-mask: url('../images/hotel/deluxe.png'); }
-  .room.thesuite { --room-mask: url('../images/hotel/thesuite.png'); }
-  .room.hillsuite { --room-mask: url('../images/hotel/hillsuite.png'); }
-  .room.royalsuite { --room-mask: url('../images/hotel/royalsuite.png'); }
-  .room.deluxefamily { --room-mask: url('../images/hotel/deluxefamily.png'); }
+  .room.deluxe > li:first-child::before {
+    -webkit-mask-image: var(--room-deluxe-mask);
+    mask-image: var(--room-deluxe-mask);
+  }
+  .room.thesuite > li:first-child::before {
+    -webkit-mask-image: var(--room-thesuite-mask);
+    mask-image: var(--room-thesuite-mask);
+  }
+  .room.hillsuite > li:first-child::before {
+    -webkit-mask-image: var(--room-hillsuite-mask);
+    mask-image: var(--room-hillsuite-mask);
+  }
+  .room.royalsuite > li:first-child::before {
+    -webkit-mask-image: var(--room-royalsuite-mask);
+    mask-image: var(--room-royalsuite-mask);
+  }
+  .room.deluxefamily > li:first-child::before {
+    -webkit-mask-image: var(--room-deluxefamily-mask);
+    mask-image: var(--room-deluxefamily-mask);
+  }
 
   .room > li:first-child {
     position: relative;
@@ -977,8 +1017,6 @@ section{margin-bottom: 120px;}
     width: 100%;
     aspect-ratio: 435 / 597;
     background-color: #1a1a1a;
-    -webkit-mask-image: var(--room-mask);
-    mask-image: var(--room-mask);
     -webkit-mask-size: 100% 100%;
     mask-size: 100% 100%;
     -webkit-mask-repeat: no-repeat;
@@ -1053,7 +1091,7 @@ section{margin-bottom: 120px;}
   }
 
   .mobile-dining .dining-tit h1 {
-    font-size: clamp(40px, 5vw, 72px);
+    font-size: var(--dining-title-size);
   }
 
   .mobile-dining .dining-tit > .line img {
@@ -1231,6 +1269,7 @@ section{margin-bottom: 120px;}
 
   .dining-intro h2 {
     font-size: clamp(20px, 1.6vw, 28px);
+    font-weight: 300;
     margin-bottom: 16px;
     line-height: 1.5;
   }
@@ -1247,7 +1286,7 @@ section{margin-bottom: 120px;}
     grid-row: 3;
   }
 
-  
+
   .mobile-dining .dining-detail-list > li > ul {
     gap: 24px;
     min-height: 230px;
