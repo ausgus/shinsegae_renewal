@@ -1,4 +1,44 @@
 $(document).ready(function() {
+  // 신세계 그룹: PC에서는 호버, 모든 화면에서는 클릭으로 여닫기
+  const groupWrap = $(".group-list-wrap");
+  const groupButton = groupWrap.find("button");
+
+  function toggleGroup(open) {
+    groupWrap.toggleClass("is-open", open);
+    groupButton.attr("aria-expanded", String(open));
+    if (open) {
+      groupWrap.find(".group-list").stop(true, true).slideDown(200);
+    } else {
+      groupWrap.find(".group-list").stop(true, true).slideUp(200);
+    }
+  }
+
+  groupWrap.on("mouseenter", function() {
+    if (window.matchMedia('(min-width: 1100px) and (hover: hover)').matches) {
+      toggleGroup(true);
+    }
+  }).on("mouseleave", function() {
+    if (window.matchMedia('(min-width: 1100px) and (hover: hover)').matches) {
+      toggleGroup(false);
+    }
+  });
+
+  groupButton.on("click", function() {
+    toggleGroup(!groupWrap.hasClass("is-open"));
+  });
+
+  $(document).on("click", function(event) {
+    if (!$(event.target).closest(".group-list-wrap").length) toggleGroup(false);
+  });
+
+  groupWrap.on("keydown", function(event) {
+    if (event.key === "Escape") {
+      toggleGroup(false);
+      groupButton.trigger("focus");
+    }
+  }).on("focusout", function(event) {
+    if (!this.contains(event.relatedTarget)) toggleGroup(false);
+  });
   
 
 
