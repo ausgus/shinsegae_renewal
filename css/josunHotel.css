@@ -792,6 +792,11 @@ section{margin-bottom: 120px;}
 
 /* -------------------- 모바일·태블릿 공통 · 1099px 이하 -------------------- */
 @media (max-width: 1099px) {
+  /* 이동 중에도 사진이 LP 앞에 표시되도록 별도 레이어 처리 유도하기 */
+  .facility-imgs > li:nth-child(1) {
+    transform: translateZ(0);
+  }
+
   /* 카드를 누를 때 앞뒷면 전환하기 */
   .membership-card-list > li {
     cursor: pointer;
