@@ -137,6 +137,7 @@ footer .search-wrap > div:last-of-type img {
     display: block;
     width: 100%;
     height: 2px;
+    transform: rotateY(180deg);
 }
 
 footer .sns-wrap {
