@@ -167,7 +167,7 @@ footer .sns-wrap img {
     grid-column: 1 / -1;
     color: #1a1a1a;
     font-family: var(--engFont);
-    font-size: min(14.2vw, 240px);
+    font-size: min(14.2vw, 248px);
     font-weight: normal;
     line-height: 0.9;
     letter-spacing: -0.035em;
