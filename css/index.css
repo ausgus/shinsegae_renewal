@@ -735,8 +735,7 @@ main {padding-top: var(--index-header-height);}
 /* 각 섹션과 다음 영역 사이 간격 */
 .main-hero,
 .group,
-.article,
-.business {margin-bottom: 120px;}
+.article{margin-bottom: 120px;}
 
 footer {
   background-color: var(--blackTxt);
