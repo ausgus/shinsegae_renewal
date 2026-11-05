@@ -79,7 +79,7 @@ footer {
 
 .footer-gnb {
     font-size: 32px;
-    line-height: 1.3;
+    line-height: 42.9px;
 }
 
 .footer-inform {
@@ -166,7 +166,7 @@ footer .sns-wrap img {
     grid-column: 1 / -1;
     color: #1a1a1a;
     font-family: var(--engFont);
-    font-size: min(13.2vw, 224px);
+    font-size: min(14.2vw, 240px);
     font-weight: normal;
     line-height: 0.9;
     letter-spacing: -0.035em;
@@ -192,14 +192,14 @@ footer a:focus-visible,
     }
 
     .footer-gnb-wrap { gap: 32px; }
-    .footer-gnb { font-size: 20px; }
+    .footer-gnb { font-size: 20px; line-height: 25.9px; }
     .footer-inform { font-size: 14px; line-height: 1.85; }
     .footer-gnb > ul, .footer-inform { gap: 22px; }
     .footer-etc { width: 150px; align-self: stretch; justify-content: space-between; }
     footer .sns-wrap { gap: 12px; }
     footer .sns-wrap a { width: 28px; height: 28px; }
     footer .search-wrap > div:first-of-type img { width: 32px; height: 32px; }
-    .footer-logo { font-size: 14.4vw; }
+    .footer-logo { font-size: 15vw; }
 }
 
 /* 모바일: 검색 → 로고 → 메뉴 → 안내·SNS */
@@ -230,8 +230,8 @@ footer a:focus-visible,
 
     footer .search-wrap > div:first-of-type img { width: 26px; height: 26px; }
     .footer-search { padding-right: 30px; }
-    .footer-logo { grid-row: 2; font-size: 13.8vw; margin-bottom: 20px; }
-    .footer-gnb { grid-column: 1 / -1; grid-row: 3; font-size: 14px; }
+    .footer-logo { grid-row: 2; font-size: 14.5vw; margin-bottom: 20px; }
+    .footer-gnb { grid-column: 1 / -1; grid-row: 3; font-size: 14px; line-height: 1.5; }
     .footer-gnb > ul { flex-direction: row; justify-content: space-between; gap: 8px; }
     .footer-gnb a { white-space: nowrap; }
 

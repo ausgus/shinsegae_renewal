@@ -34,7 +34,7 @@ $(document).ready(function() {
   setHeroPosition();
   $(window).on('resize', setHeroPosition);
 
-  // 레고 캐러셀처럼 한 칸 이동한 뒤 첫 로고를 맨 뒤로 옮기기
+  //이동한 뒤 첫 로고를 맨 뒤로 옮기기
   let groupWidth = 0;
 
   // 이동 중 오른쪽이 비지 않도록 기존 목록을 한 번 복제
@@ -59,7 +59,7 @@ $(document).ready(function() {
     setGroupPosition();
   });
 
-  let groupTimer = setInterval(nextGroup, 2000);
+  let groupTimer = setInterval(nextGroup, 1500);
 
   $('.group-logo-wrap').mouseenter(function() {
     clearInterval(groupTimer);
