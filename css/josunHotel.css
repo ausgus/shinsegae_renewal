@@ -31,10 +31,7 @@
   :root { --dining-title-size: clamp(40px, 5vw, 72px); }
 }
 
-body {
-  font-family: "Noto Sans";
-  background-color: #1a1a1a;
-}
+body {background-color: #1a1a1a;}
 
 header {
   box-sizing: border-box;
