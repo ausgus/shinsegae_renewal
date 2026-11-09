@@ -1,6 +1,8 @@
 gsap.registerPlugin(Draggable);
 
-// PC·태블릿: 스크롤 위치는 건드리지 않고 드래그로만 움직여요.
+const roomAutoplayDesktop = window.matchMedia('(min-width: 1100px)');
+
+// PC와 태블릿은 드래그할 수 있고, PC에서는 자동으로 한 장씩 넘겨요.
 function initRoomGsap() {
   const slider = document.querySelector('.room-slider');
   const cards = gsap.utils.toArray('.room-list > li');
@@ -9,10 +11,11 @@ function initRoomGsap() {
   const wrap = gsap.utils.wrap(-cards.length / 2, cards.length / 2);
   let step;
   let startPosition;
+  let autoplayTimer;
 
   function render() {
     cards.forEach(function (card, index) {
-      // 마지막 카드 다음에도 첫 카드가 자연스럽게 이어져요.
+      // 마지막카드 이후 첫카드 연결
       const distance = wrap(index - playhead.position);
       const size = Math.max(0, 1 - Math.abs(distance) * 0.25);
 
@@ -37,7 +40,8 @@ function initRoomGsap() {
     type: 'x',
     trigger: slider,
     allowNativeTouchScrolling: true,
-    onPress: function () {
+    onDragStart: function () {
+      clearTimeout(autoplayTimer);
       gsap.killTweensOf(playhead);
       startPosition = playhead.position;
     },
@@ -45,20 +49,40 @@ function initRoomGsap() {
       playhead.position = startPosition + (this.startX - this.x) / step;
       render();
     },
-    onRelease: function () {
+    onDragEnd: function () {
       gsap.to(playhead, {
         position: Math.round(playhead.position),
         duration: 0.4,
         ease: 'power2.out',
         onUpdate: render,
       });
+      scheduleAutoplay();
     },
   })[0];
 
+  function scheduleAutoplay() {
+    clearTimeout(autoplayTimer);
+    if (!roomAutoplayDesktop.matches || drag.isDragging) return;
+
+    autoplayTimer = setTimeout(function () {
+      gsap.to(playhead, {
+        position: Math.round(playhead.position) + 1,
+        duration: 0.65,
+        ease: 'power2.inOut',
+        onUpdate: render,
+      });
+      scheduleAutoplay();
+    }, 2000);
+  }
+
+  scheduleAutoplay();
+  roomAutoplayDesktop.addEventListener('change', scheduleAutoplay);
   window.addEventListener('resize', resize);
 
   return function () {
+    roomAutoplayDesktop.removeEventListener('change', scheduleAutoplay);
     drag.kill();
+    clearTimeout(autoplayTimer);
     gsap.killTweensOf(playhead);
     window.removeEventListener('resize', resize);
     gsap.set(cards, { clearProps: 'transform,opacity,zIndex' });

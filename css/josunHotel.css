@@ -422,22 +422,40 @@ section{margin-bottom: 120px;}
 }
 
 .facility-nav button {
+  display: grid;
+  place-items: center;
+  width: clamp(32px, 3vw, 54px);
+  aspect-ratio: 1;
   padding: 0;
   border: 0;
-  background: transparent;
+  border-radius: 50%;
+  background-color: #cdcdcd33;
+  color: #f2f2f2;
   cursor: pointer;
 }
 
-.facility-nav img {
-  display: block;
-  width: clamp(32px, 3vw, 54px);
-  height: auto;
+.facility-nav button::after {
+  content: "";
+  box-sizing: border-box;
+  width: 40%;
+  aspect-ratio: 1;
+  border: solid currentColor;
+  border-width: 0 2px 2px 0;
+  transform: translateX(-20%) rotate(-45deg);
+}
+
+.facility-nav .facility-prev::after {
+  transform: translateX(20%) rotate(135deg);
+}
+
+.facility-nav button:hover {
+  background-color: #ffffff99;
+  color: #000000;
 }
 
 .facility-nav button:focus-visible {
   outline: 2px solid var(--whiteTxt);
   outline-offset: 4px;
-  border-radius: 50%;
 }
 
 
@@ -559,7 +577,7 @@ section{margin-bottom: 120px;}
 
 
 .more-btn:hover {
-  background-color: #9A6D6D; color: var(--blackTxt); border: 1px solid #9A6D6D;
+  background-color: var(--whiteTxt); color: var(--blackTxt); border: 1px solid var(--whiteTxt);
 }
   
 .more-btn:hover .white{display: none;}
@@ -880,18 +898,18 @@ section{margin-bottom: 120px;}
 .membership-card-list {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  place-items: center; gap: 70px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  place-items: center; gap: 70px clamp(12px, 3vw, 70px);
   margin-top: 100px;
 }
 
 .membership-card-list > li {
   width: clamp(135px, 17vw, 340px);
+  max-width: 100%;
   position: relative;
   aspect-ratio: 342 / 528;
+  container-type: inline-size;
 }
-
-.membership-card-list > li:last-child {display: none;}
 
 .membership-card-list > li > ul{
   position: relative;
@@ -918,37 +936,45 @@ section{margin-bottom: 120px;}
 
 
 .membership-card-list > li .card.card-back {
-  padding-top: clamp(38px, 3vw, 100px);
-  padding-bottom: clamp(10px, 1.4vw, 30px);
   mask-image: url("../images/hotel/membership-bg.png");
   mask-size: 100% 100%;
   mask-position: center;
   mask-repeat: no-repeat;
   background-color: var(--whiteTxt);
-
-
   transform: rotateY(180deg);
 }
 
+.card-back-premier {--card-title-color: #6491a9;}
+.card-back-gold {--card-title-color: #a6876f;}
+.card-back-platinum {--card-title-color: #878b8f;}
+.card-back-grand-josun {--card-title-color: #c1a49a;}
+.card-back-black {--card-title-color: #353546;}
 
+/* cqw는 화면 전체가 아니라 카드 너비를 기준으로 계산한다. */
 .membership-card-list > li .card.card-back h3 {
+  position: absolute;
+  top: 19%;
   width: 100%;
+  transform: translateY(-50%);
   font-family: var(--engFont); text-align: center;
-  font-size: clamp(21px, 3vw, 51px); color: #9B9635;
-  margin-bottom: clamp(12px, 1vw, 36px);
+  font-size: 14.8cqw;
+  line-height: 0.95;
+  color: var(--card-title-color);
 }
 
 
 .membership-card-list > li .card.card-back ul {
-  padding-left: clamp(10px, 1.4vw, 30px); padding-right: clamp(24px, 2vw, 60px);
+  position: absolute;
+  top: 34%; left: 11%; right: 8%;
   display: flex; flex-direction: column;
-  gap: clamp(8px, 0.8vw, 15px);
-  margin-bottom: clamp(15px, 2vw, 36px);
+  gap: 2.5cqw;
 }
 
 
 .membership-card-list > li .card.card-back li {
-  font-size: clamp(9px, 1vw, 23px);
+  font-size: max(9px, 6.7cqw);
+  line-height: 1.6;
+  color: #575757;
 }
 
 
@@ -958,18 +984,23 @@ section{margin-bottom: 120px;}
 
 
 .membership-price {
+  position: absolute;
+  top: 87%; left: 9%;
+  transform: translateY(-50%);
   font-family: "Frank Ruhl Libre";
-  font-size: clamp(8px, 0.8vw, 19px); font-weight: 200;
-  padding-left: clamp(6px, 0.8vw, 20px);
+  font-size: 5.5cqw; font-weight: 300;
+  color: var(--blackTxt);
+  white-space: nowrap;
 }
 
-.membership-price span {font-size: clamp(17px, 4vw, 41px);}
+.membership-price span {font-size: 12cqw;}
 
 
 .membership-card-list > li .membership-btn {
-  width: clamp(20px, 2vw, 40px);
+  width: 12.5%;
   position: absolute;
-  bottom: clamp(10px, 2vw, 30px); right: clamp(10px, 2vw, 30px);
+  top: 87%; right: 9%;
+  transform: translateY(-50%);
 }
 
 
@@ -1051,6 +1082,8 @@ section{margin-bottom: 120px;}
   .membership-card-list > li {
     cursor: pointer;
   }
+
+  .membership-card-list > li:last-child {display: none;}
 
   .membership-card-list > li.is-flipped > ul {
     transform: rotateY(180deg);
@@ -1219,6 +1252,8 @@ section{margin-bottom: 120px;}
 
   .membership-card-list {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
 
@@ -1425,10 +1460,6 @@ section{margin-bottom: 120px;}
 
   .membership-tit > li.more-btn { display: flex; }
 
-  .membership-card-list > li:last-child {
-    display: block;
-  }
-
   /* PC 카드를 줄이지 않고 캐러셀로 이동하기 */
   .membership-slider {
     overflow: hidden;
@@ -1439,61 +1470,14 @@ section{margin-bottom: 120px;}
     gap: 0;
     margin-top: 0;
     align-items: stretch;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
   }
 
   .membership-card-list > li {
     width: 200px;
     flex-shrink: 0;
     height: auto;
-    container-type: inline-size;
-  }
-
-  .membership-card-list > li .card.card-back {
-    padding: 16% 0 24%;
-  }
-
-  .membership-card-list > li .card.card-back h3 {
-    position: absolute;
-    top: 16%;
-    left: 0;
-    transform: translateY(-50%);
-    font-size: 32px;
-    margin-bottom: 0;
-  }
-
-  .membership-card-list > li .card.card-back ul {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    transform: translateY(-50%);
-    padding: 0 6%;
-    gap: 5px;
-    margin-bottom: 0;
-  }
-
-  .membership-card-list > li .card.card-back li {
-    font-size: 14px;
-    line-height: 1.35;
-  }
-
-  .membership-card-list .membership-price {
-    position: absolute;
-    bottom: 6%;
-    left: 6%;
-    right: 20%;
-    padding-left: 0;
-    font-size: 10px;
-  }
-
-  .membership-card-list .membership-price span {
-    font-size: 20px;
-  }
-
-  .membership-card-list > li .membership-btn {
-    width: 10%;
-    bottom: 6%;
-    right: 6%;
   }
 
   .membership-slider.is-dragging .membership-card-list > li:hover > ul {

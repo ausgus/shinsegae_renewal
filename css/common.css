@@ -79,13 +79,13 @@ footer {
 
 .footer-gnb {
     font-size: 32px;
-    line-height: 42.9px;
+    line-height: 35.2px;
 }
 
 .footer-inform {
     font-size: 22px;
     font-weight: 300;
-    line-height: 1.95;
+    line-height: 1.6;
 }
 
 .footer-etc {
@@ -165,7 +165,7 @@ footer .sns-wrap img {
 
 .footer-logo {
     grid-column: 1 / -1;
-    color: #1a1a1a;
+    color: #1a1a1ad0;
     font-family: var(--engFont);
     font-size: min(14.2vw, 248px);
     font-weight: normal;
@@ -233,7 +233,12 @@ footer a:focus-visible,
     .footer-search { padding-right: 30px; }
     .footer-logo { grid-row: 2; font-size: 14.5vw; margin-bottom: 20px; }
     .footer-gnb { grid-column: 1 / -1; grid-row: 3; font-size: 14px; line-height: 1.5; }
-    .footer-gnb > ul { flex-direction: row; justify-content: space-between; gap: 8px; }
+    .footer-gnb > ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 12px 8px;
+    }
     .footer-gnb a { white-space: nowrap; }
 
     .footer-inform {
