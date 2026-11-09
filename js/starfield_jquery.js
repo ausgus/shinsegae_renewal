@@ -46,20 +46,19 @@
         });
 
 
-    // ---------------pc  메뉴
-        $(".gnb > li").hover(function(){
-            if(window.innerWidth < 900) return;
+    // PC 메뉴 열기
+    $(".gnb > li").mouseenter(function() {
+        if (window.innerWidth < 900) return;
 
-            $(".gnb .sub").stop().slideDown();
-            $(".sub-bg").stop().slideDown();
-            },
-            function(){
-                if(window.innerWidth < 900) return;
+        $(".gnb .sub, .sub-bg").stop().slideDown();
+    });
 
-                $(".gnb .sub").stop().slideUp();
-                $(".sub-bg").stop().slideUp();
-            }
-        );
+    // 서브 배경까지 벗어나면 닫기
+    $("header").mouseleave(function() {
+        if (window.innerWidth < 900) return;
+
+        $(".gnb .sub, .sub-bg").stop().slideUp();
+    });
 
 
 
@@ -123,6 +122,12 @@
                 }
             }
         );
+
+        // 임시 링크 클릭 시 맨 위로 이동하지 않게 처리
+        $(".kids-btn, .library .btn").click(function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        });
 
         // 키즈 - 모바일 터치
         $(".kids li").click(function() {
