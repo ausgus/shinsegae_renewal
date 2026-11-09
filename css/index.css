@@ -146,8 +146,9 @@ header {
 
 .group-list-wrap > li:last-child {
   position: absolute;
-  top: 100%; right: 0;
-  width: 160px;
+  top: 100%; left: 50%;
+  transform: translateX(-50%);
+  width: 190px;
   z-index: 30;
 }
 
