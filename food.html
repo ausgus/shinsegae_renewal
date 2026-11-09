@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>신세계 푸드</title>
+    <link rel="stylesheet" href="reset/reset.css">
+    <link rel="stylesheet" href="css/food.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:opsz,wght@16..144,100..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&family=Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/food.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-warp">
+            
+            <div class="header-inner">
+                <div class="h-icon">
+                    <a href="#"><img src="images/food/icon-menu.svg" alt="햄버거메뉴바"></a>
+                    <a href="#"><img src="images/food/search.svg" alt="돋보기"></a>
+                </div>
+                
+                <a href="#"><img src="images/food/food-logo.png" alt="로고"></a>
+                
+                <nav class="gnb">
+                    <ul>
+                        <li><a href="#">COMPANY</a> 
+                            <ul class="sub-menu-wrap">
+                                <li><a href="#">STORY</a></li>
+                                <li><a href="#">PR</a></li>
+                                <li><a href="#">IR</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">BUSINESS</a>
+                            <ul class="sub-menu-wrap">
+                                <li><a href="#">식품제조/유통</a></li>
+                                <li><a href="#">이커리</a></li>
+                                <li><a href="#">프랜차이즈</a></li>
+                                <li><a href="#">프리미엄 다이닝</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">고객지원</a>
+                            <ul class="sub-menu-wrap">
+                                <li><a href="#">고객의 소리</a></li>
+                                <li><a href="#">외식브랜드 가명 및 입점 문의</a></li>
+                                <li><a href="#">식자재 구매 상담</a></li>
+                                <li><a href="#">식자재 납품 상담</a></li>
+                                <li><a href="#">자주하는 질문</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">신세계 그룹</a>
+                            <ul class="sub-menu-wrap">
+                                <li><a href="#">그랜드조선 호텔</a></li>
+                                <li><a href="#">스타필드</a></li>
+                                <li><a href="#">신세계 푸드</a></li>
+                            </ul>
+                        </li> 
+                    </ul>
+                </nav>
+            </div>
+            <div class="header-bg"></div>
+
+            <div class="menu-bar">
+                <div class="bar-icon">
+                    <button type="button" aria-label="메뉴 닫기"><img src="images/food/icon-x.png" alt=""></button>
+                    <div><img src="images/food/food-logo.png" alt="SHINSEGAE FOOD"></div>
+                </div>
+                <ul>
+                    <li><a href="#">COMPANY</a> 
+                        <ul class="sub-menu-wrap">
+                            <li><a href="#">STORY</a></li>
+                            <li><a href="#">PR</a></li>
+                            <li><a href="#">IR</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">BUSINESS</a>
+                        <ul class="sub-menu-wrap">
+                            <li><a href="#">식품제조/유통</a></li>
+                            <li><a href="#">이커리</a></li>
+                            <li><a href="#">프랜차이즈</a></li>
+                            <li><a href="#">프리미엄 다이닝</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">고객지원</a>
+                        <ul class="sub-menu-wrap">
+                            <li><a href="#">고객의 소리</a></li>
+                            <li><a href="#">외식브랜드 가명 및 입점 문의</a></li>
+                            <li><a href="#">식자재 구매 상담</a></li>
+                            <li><a href="#">식자재 납품 상담</a></li>
+                            <li><a href="#">자주하는 질문</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index.html">신세계 그룹</a>
+                        <ul class="sub-menu-wrap">
+                            <li><a href="josunHotel.html">그랜드조선 호텔</a></li>
+                            <li><a href="starfield.html">스타필드</a></li>
+                            <li><a href="food.html">신세계 푸드</a></li>
+                        </ul>
+                    </li> 
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main> 
+        <!-----------------메인영역------------------->
+        <div class="hero">
+            <div class="hero-bg">
+                <div class="hero-text"><img src="images/food/hero-text.png" alt="메인텍스트"></div>
+                <div class="hero-brands">
+                    <button type="button" class="hero-prev" aria-label="이전 브랜드">&#8249;</button>
+                    <div class="hero-slide">
+                    <ul>
+                        <li>
+                            <img src="images/food/group.png" alt="노브랜드">
+                            <img src="images/food/hero-logo1-w.png" alt="노브랜드">
+                        </li>
+                        <li>
+                            <img src="images/food/group-1.png" alt="호텔컬렉션">
+                            <img src="images/food/hero-logo2.png" alt="호텔컬렉션">
+                        </li>
+                        <li>
+                            <img src="images/food/group-2.png" alt="베키아에누보 가스트로">
+                            <img src="images/food/hero-logo3.png" alt="베키아에누보 가스트로">
+                        </li>
+                        <li>
+                            <img src="images/food/group-3.png" alt="데블스도어">
+                            <img src="images/food/hero-logo4-w.png" alt="데블스도어">
+                        </li>
+                        <li>
+                            <img src="images/food/group-4.png" alt="보앤미">
+                            <img src="images/food/hero-logo5-w.png" alt="보앤미">
+                        </li>
+                        <li>
+                            <img src="images/food/group-5.png" alt="블랑제리">
+                            <img src="images/food/hero-logo6-w.png" alt="블랑제리">
+                        </li>
+                        <li>
+                            <img src="images/food/group-6.png" alt="올바르고 반듯한">
+                            <img src="images/food/hero-logo7.png" alt="올바르고 반듯한">
+                        </li>
+                        <li>
+                            <img src="images/food/group-7.png" alt="오슬로">
+                            <img src="images/food/hero-logo8.png" alt="오슬로">
+                        </li>
+                        <li>
+                            <img src="images/food/group-8.png" alt="베이커리">
+                            <img src="images/food/hero-logo9-w.png" alt="베이커리">
+                        </li>
+                        <li>
+                            <img src="images/food/group-9.png" alt="베키아에누보">
+                            <img src="images/food/hero-logo10-w.png" alt="베키아에누보">
+                        </li>
+                    </ul>
+                    </div>
+                    <button type="button" class="hero-next" aria-label="다음 브랜드">&#8250;</button>
+                    <div class="hero-dots"></div>
+                </div>
+            </div>
+        </div>
+        <!-------------------Core Value----------------->
+        <section class="core">
+            <h1>Core Value</h1>
+            <div class="core-value">
+                <div class="core-wrap">
+                    <div class="core-text">
+                        <div class="taste"></div>
+                        <div class="core-txt">
+                            <h3>Taste & Quality</h3>
+                            <p>최선의 '품질'을통해<br>최상의 '맛'을 구현합니다.</p>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>
+                            <div class="convenience"></div>
+                            <div class="core-text">
+                                <h3>Convenience</h3>
+                                <p>보관/조리/폐기 전반에 걸친<br>고객 중심 마인드로<br>최적화된 편의를 제공합니다.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="health"></div>
+                            <div class="core-text">
+                                <h3>Health & Wellness</h3>
+                                <p>고객의 건강과<br>라이프스타일을 지원하는<br>맞춤형 푸드 옵션을 제공합니다.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="value"></div>
+                            <div class="core-text">
+                                <h3>Value</h3>
+                                <p>지구와 사회에 긍정적인 영향을,<br> 지속 가능하고<br>책임감 있는 사업을 이어갑니다.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="core-line">
+                    <li><img src="images/food/core-line.png" alt="라인1"></li>
+                    <li><img src="images/food/core-line.png" alt="라인2"></li>
+                    <li><img src="images/food/core-line.png" alt="라인3"></li>
+                </ul>
+            </div>
+
+            <div class="core-mobile">
+                <div class="m-taste-wrap">
+                    <div class="m-taste">
+                        <img src="images/food/mobile-taste.png" alt="품질">
+                        <!-- <img src="images/food/m-taste.png" alt="그림자"> -->
+                    </div>
+                    <div class="core-txt">
+                        <h3>Taste & Quality</h3>
+                        <p>최선의 '품질'을통해<br>최상의 '맛'을 구현합니다.</p>
+                    </div>
+                </div>
+
+                <div class="m-con-wrap">
+                    <div class="m-convenience">
+                        <img src="images/food/mobile-convenience.png" alt="편의">
+                        <!-- <img src="images/food/m-conven.png" alt="그림자"> -->
+                    </div>
+                        <div class="core-text">
+                            <h3>Convenience</h3>
+                            <p>보관/조리/폐기 전반에 걸친<br>고객 중심 마인드로<br>최적화된 편의를 제공합니다.</p>
+                        </div>
+                </div>
+            </div>
+
+        </section>
+        <!-------------------Food ON-------------------->
+        <section class="food-on">
+            <h1>Food ON</h1>
+            <div class="food-wrap">
+                <div class="food-info">
+                    <h2>일상의 식탁을<br>더 풍성하게.</h2>
+                    <p>신세계푸드의 다양한 브랜드로<br>일상에서 더 특별한 맛을 만나보세요.</p>
+                    <ul class="food-btn">
+                        <li><a href="https://www.shinsegaefood.com/business/v2/manufacturing.sf">EXPLORE OUR BRANDS</a></li>
+                        <li><img src="images/food/button-arrow-w.png" alt="흰색화살표"></li>
+                    </ul>
+                </div>
+                <div class="food-arrow">
+                    <div><img src="images/food/food-arrow-left.png" alt="이전"></div>
+                    <div><img src="images/food/food-arrow-right.png" alt="다음"></div>
+                </div>
+                <div class="plate">
+                    <div class="plating"></div>
+                    <ul class="tab-content-wrap">
+                        <li class="active"><img src="images/food/food-1.png" alt="노브랜드"></li>
+                        <li><img src="images/food/food-2.png" alt="베키아에누보 가스트로"></li>
+                        <li><img src="images/food/food-3.png" alt="올바르고 반듯한"></li>
+                        <li><img src="images/food/food-4.png" alt="보앤미"></li>
+                        <li><img src="images/food/food-5.png" alt="호텔컬렉션"></li>
+                        <li><img src="images/food/food-6.png" alt="블랑제리"></li>
+                        <li><img src="images/food/food-7.png" alt="데블스도어"></li>
+                        <li><img src="images/food/food-8.png" alt="오슬로"></li>
+                        <li><img src="images/food/food-9.png" alt="베이커리"></li>
+                    </ul>
+                </div>
+                
+                <ul class="tab-menu">
+                    <li class="active"><img src="images/food/food-text1.png" alt="노브랜드"></li>
+                    <li><img src="images/food/food-text2.png" alt="베키아에누보 가스트로"></li>
+                    <li><img src="images/food/food-text3.png" alt="올바르고 반듯한"></li>
+                    <li><img src="images/food/food-text4.png" alt="보앤미"></li>
+                    <li><img src="images/food/food-text5.png" alt="호텔컬렉션"></li>
+                    <li><img src="images/food/food-text6.png" alt="블랑제리"></li>
+                    <li><img src="images/food/food-text7.png" alt="데블스도어"></li>
+                    <li><img src="images/food/food-text8.png" alt="오슬로"></li>
+                    <li><img src="images/food/food-text9.png" alt="베이커리"></li>
+                </ul> 
+            </div>
+        </section>
+<!--------------------Brands-------------------->
+        <section class="brands">
+            <h1>Brands</h1>
+            <ul class="brands-tab">
+                <li class="active">
+                    <ul class="button">
+                        <li class="active"><img src="images/food/brands-w-1.png" alt="식품제조/유통"></li>
+                        <li>식품제조/유통</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="button">
+                        <li><img src="images/food/brands-w-2.png" alt="베이커리"></li>
+                        <li>베이커리</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="button">
+                        <li><img src="images/food/brands-w-3.png" alt="프랜차이즈"></li>
+                        <li>프랜차이즈</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="button">
+                        <li><img src="images/food/brands-w-4.png" alt="프리미엄다이닝"></li>
+                        <li>프리미엄다이닝</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="brands-content">
+                <ul class="active">
+                    <li>
+                        <div class="brands-img"><img src="images/food/brands1-1.png" alt="샌드위치"></div>
+                        <div class="brands-text">
+                            <h3>베키아에누보</h3>
+                            <div class="brands-line"></div>
+                            <p>루꼴라토마토치킨<br>치아바타 샌드위치</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="brands-img"><img src="images/food/brands1-2.png" alt="치킨텐더"></div>
+                        <div class="brands-text">
+                            <h3>올바르고 반듯한</h3>
+                            <div class="brands-line"></div>
+                            <p>슈퍼크런치<br>치킨텐더</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="brands-img"><img src="images/food/brands1-3.png" alt="소갈비탕"></div>
+                        <div class="brands-text">
+                            <h3>호텔컬렉션</h3>
+                            <div class="brands-line"></div>
+                            <p>순살 갈비탕</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="brands-img"><img src="images/food/brands1-4.png" alt="부대찌개"></div>
+                        <div class="brands-text">
+                            <h3>호텔컬렉션</h3>
+                            <div class="brands-line"></div>
+                            <p>부대찌개</p>
+                        </div>
+                    </li>
+                </ul>
+                
+                <ul>
+                    <li>
+                        <div class="brands-img"><img src="images/food/brands2-1.jpg" alt="빵1"></div>
+                        <div class="brands-text">
+                            <h3>보앤미</h3>
+                            <div class="brands-line"></div>
+                            <p>Levain</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="brands-img"><img src="images/food/brands2-2.jpg" alt="빵2"></div>
+                        <div class="brands-text">
+                            <h3>보앤미</h3>
+                            <div class="brands-line"></div>
+                            <p>Croissant</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="brands-img"><img src="images/food/brands2-3.jpg" alt="빵3"></div>
+                        <div class="brands-text">
+                            <h3>보앤미</h3>
+                            <div class="brands-line"></div>
+                            <p>Viennoise</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="brands-img"><img src="images/food/brands2-4.jpg" alt="빵4"></div>
+                        <div class="brands-text">
+                            <h3>보앤미</h3>
+                            <div class="brands-line"></div>
+                            <p>Cookie Shot</p>
+                        </div>
+                    </li>
+                </ul>
+                
+                <ul>
+                    <li>
+                        <div class="brands-img"><img src="images/food/brands3-1.png" alt="햄버거"></div>
+                        <div class="brands-text">
+                            <h3>노브랜드</h3>
+                            <div class="brands-line"></div>
+                            <p>진짜 비빔밥 버거</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="brands-img"><img src="images/food/brands3-2.png" alt="아이스크림"></div>
+                        <div class="brands-text">
+                            <h3>오슬로</h3>
+                            <div class="brands-line"></div>
+                            <p>오리지널 아이스</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="brands-img"><img src="images/food/brands3-3.png" alt="햄버거"></div>
+                        <div class="brands-text">
+                            <h3>노브랜드</h3>
+                            <div class="brands-line"></div>
+                            <p>NBB 훅</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="brands-img"><img src="images/food/brands3-4.png" alt="아이스크림"></div>
+                        <div class="brands-text">
+                            <h3>오슬로</h3>
+                            <div class="brands-line"></div>
+                            <p>오리지널 컵</p>
+                        </div>
+                    </li>
+                </ul>
+                
+                <ul>
+                    <li>
+                        <div class="brands-img"><img src="images/food/brands4-1.png" alt="스테이크"></div>
+                        <div class="brands-text">
+                            <h3>데블스도어</h3>
+                            <div class="brands-line"></div>
+                            <p>스테이크 코스타타</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="brands-img"><img src="images/food/brands4-2.png" alt="스테이크"></div>
+                        <div class="brands-text">
+                            <h3>베키아에누보</h3>
+                            <div class="brands-line"></div>
+                            <p>씨푸드 버터 파스타</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="brands-img"><img src="images/food/brands4-3.png" alt="스테이크"></div>
+                        <div class="brands-text">
+                            <h3>베키아에누보 가스트로</h3>
+                            <div class="brands-line"></div>
+                            <p>파로 베르데 빈스</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="brands-img"><img src="images/food/brands4-4.png" alt="샌드위치"></div>
+                        <div class="brands-text">
+                            <h3>베키아에누보</h3>
+                            <div class="brands-line"></div>
+                            <p>치킨 클럽 샌드위치</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <ul class="brands-btn">
+                <li><a href="https://www.shinsegaefood.com/business/v2/manufacturing.sf">EXPLORE OUR BRANDS</a></li>
+                <li><img src="images/food/button-arrow-w.png" alt="흰색화살표"></li>
+            </ul>
+        </section>
+        <!---------------------식문화------------------------->
+        <section class="contact">
+            <h1>함께만들어가는 새로운 식문화</h1>
+            <ul class="contact-list">
+                <li>
+                    <div class="list-1"></div>
+                    <div class="contact-info">
+                        <img src="images/food/icon1.png" alt="스토어">
+                        <div class="info-txt">
+                            <h3>외식브랜드<br>가맹 및 입점 문의</h3>
+                            <p>신세계푸드의 다양한 외식 브랜드와 함께 <br class="contact-mobile-br">새로운 비즈니스의 기회를 만들어보세요.</p>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="list-2"></div>
+                    <div class="contact-info">
+                        <img src="images/food/icon2.png" alt="트럭">
+                        <div class="info-txt">
+                            <h3>식자재<br>구매 및 납품 상담</h3>
+                            <p>신선하고 품질 좋은 식자재를 바탕으로 <br class="contact-mobile-br">안정적인 공급과 맞춤형 상담을 제공합니다.</p>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="list-3"></div>
+                    <div class="contact-info">
+                        <img src="images/food/icon3.png" alt="전화">
+                        <div class="info-txt">
+                            <h3>고객의 소리</h3>
+                            <p>신세계푸드에 대한 소중한 의견을 들려주세요. <br class="contact-mobile-br">고객의 목소리에 귀 기울이겠습니다.</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-inner">
+            <ul class="footer-gnb-wrap">
+                <li class="footer-gnb">
+                    <ul>
+                        <li><a href="#">PRESS</a></li>
+                        <li><a href="#">INSIDE</a></li>
+                        <li><a href="#">SHORTS</a></li>
+                        <li><a href="#">TREND</a></li>
+                        <li><a href="#">MEDIA LIBRARY</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <ul class="footer-inform">
+                        <li><a href="#">신세계 그룹</a></li>
+                        <li><a href="#">뉴스룸 소개</a></li>
+                        <li><a href="#">신세계 핫라인</a></li>
+                        <li><a href="#">개인정보 처리 방침</a></li>
+                        <li><a href="#">뉴스룸 운영 정책</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+
+            <ul class="footer-etc">
+                <li class="search-wrap">
+                    <input class="footer-search" type="text" name="footer-search" id="search">
+                    <div><img src="images/footer-Search-white.png" alt="search"></div>
+                    <div><img src="images/footer-Line.png" alt="line"></div>
+                </li>
+
+                <li>
+                    <ul class="sns-wrap">
+                        <li><a href="#"><img src="images/black-footer-instagram.png" alt="instagram"></a></li>
+                        <li><a href="#"><img src="images/black-footer-youtube.png" alt="youtube"></a></li>
+                        <li><a href="#"><img src="images/black-footer-Daum.png" alt="daum"></a></li>
+                        <li><a href="#"><img src="images/black-footer-blog.png" alt="blog"></a></li>
+                    </ul>
+                </li>
+            </ul>
+
+
+            <h1 class="footer-logo">SHINSEGAE</h1>
+        </div>
+    </footer>
+</body>
+</html>   
