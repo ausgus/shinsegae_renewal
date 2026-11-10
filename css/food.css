@@ -95,6 +95,9 @@ header{
     width: 32px;
     height: 44px;
 }
+.header-warp .h-icon a:first-child{
+    display: none;
+}
 .header-warp .h-icon a img{
     display: block;
     width: 25px;
@@ -237,18 +240,25 @@ header{
         height: 64px;
     }
     .header-warp{
-        padding: 0 24px;
+        padding: 0 32px;
     }
     .header-inner > a{
         width: 200px;
     }
+    .header-warp .h-icon{
+        width: 100%;
+        justify-content: space-between;
+        gap: 0;
+    }
     .header-warp .h-icon a{
         width: 40px;
+    }
+    .header-warp .h-icon a:first-child{
+        display: flex;
     }
     .header-warp .h-icon a img{
         width: 24px;
     }
-    .header-warp .h-icon a:nth-child(2),
     .header-warp .gnb{
         display: none;
     }
@@ -258,7 +268,7 @@ header{
         height: 56px;
     }
     .header-warp{
-        padding: 0 20px;
+        padding: 0 24px;
     }
     .header-inner > a{
         width: 170px;
@@ -270,9 +280,6 @@ header{
 @media (max-width: 390px){
     header{
         height: 56px;
-    }
-    .header-warp{
-        padding: 0 16px;
     }
     .header-inner > a{
         width: 170px;
@@ -286,7 +293,7 @@ main{
     padding-top: 100px;
 }
 .hero{
-    margin-bottom: clamp(120px, 10vw, 160px);
+    margin-bottom: clamp(120px, 10vw, 200px);
 }
 .hero-bg{
     background-image: url("../images/food/hero2.png");
@@ -303,7 +310,6 @@ main{
     position: absolute;
     left: 40%;top: 47%;
     filter: brightness(0) invert(1);
-    
 }
 .hero-brands ul > li img{
     transform: translateY(-50%);
@@ -487,13 +493,18 @@ main{
     width: calc(100% - 60px);
     max-width: 1440px;
     margin: 0 auto;
-    margin-bottom: clamp(120px, 10vw, 160px);
+    margin-bottom: clamp(120px, 10vw, 200px);
 }
-.core h1{
-    text-align: center;
-    margin-bottom: clamp(56px, 5vw, 80px);
-    font-size: clamp(2.5rem, 4vw, 3.7rem);
+.core h1,
+.food-on h1,
+.brands h1,
+.contact h1{
+    text-align: left;
+    margin-bottom: clamp(48px, 4.5vw, 64px);
+    font-size: clamp(2rem, 3vw, 3rem);
     font-weight: 500;
+    line-height: 1.35;
+    word-break: keep-all;
 }
 .core-value{
     position: relative;
@@ -503,7 +514,15 @@ main{
 }
 .core-wrap .core-txt{
     position: absolute;
-    left: 30px;top: 35%;
+    left: 0; top: 0;
+    width: 30.5%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
 }
 .core-wrap .core-text .taste{
     background-image: url(../images/food/core1.png);
@@ -514,14 +533,17 @@ main{
     aspect-ratio: 1440 / 550;
 }
 .core-wrap .core-txt h3{
-    font-size: clamp(1.75rem, 3vw, 3.3rem);
-    font-family: 'Montagu+Slab', serif;
-    margin-bottom: 100px;
+    font-size: clamp(1.125rem, 2.4vw, 2.5rem);
+    line-height: 1.3;
+    font-family: 'Montagu Slab', serif;
+    font-weight: 400;
+    margin-bottom: clamp(28px, 3vw, 48px);
+
 }
 .core-wrap .core-txt p{
     text-align: center;
-    font-size: clamp(1.125rem, 1.7vw, 2rem);
-    line-height: 40px;
+    font-size: clamp(1rem, 1.67vw, 1.5rem);
+    line-height: 1.7;
 }
 .core-wrap ul{
     margin-top: 50px;
@@ -565,24 +587,26 @@ main{
     position: absolute;
     left: 50%; top: 15%;
     transform: translateX(-50%);
-    width: 100%;          
-    padding: 0 16px;       
+    width: 100%;
+    padding: 0 16px;
     box-sizing: border-box;
 }
 .core-wrap ul li .core-text h3{
-    font-size: clamp(1.5rem, 2.8vw, 3.3rem);
-    font-family: 'Montagu+Slab', serif;     
-    margin-bottom: 35px;
+    font-size: clamp(1.125rem, 2.2vw, 2.5rem);
+    line-height: 1.3;
+    font-family: 'Montagu Slab', serif;
+    font-weight: 400;
+    margin-bottom: 24px;
     text-align: center;
 }
 .core-wrap ul li:nth-child(2) .core-text h3{
     white-space: normal;
-    letter-spacing: -3px;
+    letter-spacing: normal;
 }
 .core-wrap ul li .core-text p{
     text-align: center;
-    font-size: clamp(1.125rem, 1.6vw, 1.5rem);
-    line-height: 35px;
+    font-size: clamp(1rem, 1.67vw, 1.5rem);
+    line-height: 1.7;
 }
 .core-wrap ul li:nth-child(3) .core-text p{
     white-space: normal;
@@ -619,13 +643,7 @@ main{
     width: calc(100% - 60px);
     max-width: 1440px;
     margin: 0 auto;
-    margin-bottom: clamp(120px, 10vw, 160px);
-}
-.food-on h1{
-    text-align: center;
-    margin-bottom: clamp(56px, 5vw, 80px);
-    font-size: clamp(2.5rem, 4vw, 3.7rem);
-    font-weight: 500;
+    margin-bottom: clamp(120px, 10vw, 200px);
 }
 .food-wrap{
     display: flex;
@@ -639,18 +657,17 @@ main{
     min-width: 0;
 }
 .food-info h2{
-    font-size: clamp(1.75rem, 3vw, 3.3rem);
+    font-size: clamp(1.75rem, 2.6vw, 2.75rem);
     font-weight: 500;
-    margin-bottom: 32px;
+    margin-bottom: 24px;
     line-height: 1.35;
 }
 .food-info p{
-    font-size: clamp(0.875rem, 1.4vw, 1.5rem);
-    line-height: 30px;
+    font-size: clamp(0.875rem, 1.2vw, 1.125rem);
+    line-height: 1.7;
 }
 .food-info .food-btn{
     width: fit-content;
-    max-width: 100%;
     border: 1px solid #1a1a1a;
     border-radius: 40px;
     display: flex;
@@ -661,11 +678,12 @@ main{
     transition: 0.3s;
     margin-top: 48px;
     box-sizing: border-box;
-    min-height: 50px;
-    padding: 10px 40px;
-    gap: 2.8em;
+    min-height: 48px;
+    padding: 0.45em 1.79em;
+    gap: 2rem;
+    line-height: 1.4;
     font-family: 'Montagu Slab', serif;
-    font-size: clamp(0.875rem, 1.1vw, 1.3rem);
+    font-size: clamp(1rem, 1.2vw, 1.4rem);
 }
 .food-info .food-btn:hover {
     background-color: #f2f2f2;
@@ -684,8 +702,8 @@ main{
 .food-info .food-btn li:nth-child(2){
     display: flex;
     align-items: center;
-    width: 0.77em;
-    height: 0.77em;
+    width: 0.71em;
+    height: 0.71em;
     flex-shrink: 0;
 }
 .food-info .food-btn li:nth-child(2) img{
@@ -725,7 +743,6 @@ main{
     margin-top: 15px;
     animation: food-show 0.7s ease both;
 }
-
 @keyframes food-show{
     0%{
         opacity: 0;
@@ -794,80 +811,107 @@ main{
     display: block;
     cursor: pointer;
 }
-.tab-menu > li.active > img {
-    box-shadow: 0 2px 0 #1a1a1ae0;
+.tab-menu > li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 0;
+    height: 2px;
+    background-color: #1a1a1ae0;
+    transition: 0.3s;
+}
+.tab-menu > li:nth-child(1).active::after {
+    left: min(2.694%, 6.667px);
+    width: 94.613%;
+    max-width: 234.167px;
+}
+.tab-menu > li:nth-child(2).active::after {
+    left: min(2.867%, 6.545px);
+    width: 94.982%;
+    max-width: 216.818px;
+}
+.tab-menu > li:nth-child(3).active::after {
+    left: min(2.604%, 5.000px);
+    width: 85.417%;
+    max-width: 164.000px;
+}
+.tab-menu > li:nth-child(4).active::after {
+    left: min(6.250%, 10.000px);
+    width: 87.500%;
+    max-width: 140.000px;
+}
+.tab-menu > li:nth-child(5).active::after {
+    left: min(3.861%, 8.491px);
+    width: 92.278%;
+    max-width: 202.925px;
+}
+.tab-menu > li:nth-child(6).active::after {
+    left: min(3.953%, 10.000px);
+    width: 92.490%;
+    max-width: 234.000px;
+}
+.tab-menu > li:nth-child(7).active::after {
+    left: min(7.051%, 10.312px);
+    width: 91.667%;
+    max-width: 134.062px;
+}
+.tab-menu > li:nth-child(8).active::after {
+    left: min(11.404%, 8.731px);
+    width: 77.193%;
+    max-width: 59.104px;
+}
+.tab-menu > li:nth-child(9).active::after {
+    left: min(9.091%, 12.188px);
+    width: 81.119%;
+    max-width: 108.750px;
 }
 /* ---------------Brands----------------- */
 .brands{
     width: calc(100% - 60px);
     max-width: 1440px;
     margin: 0 auto;
-    margin-bottom: clamp(120px, 10vw, 160px);
-}
-.brands h1{
-    text-align: center;
-    margin-bottom: clamp(56px, 5vw, 80px);
-    font-size: clamp(2.5rem, 4vw, 3.7rem);
-    font-weight: 500;
+    margin-bottom: clamp(120px, 10vw, 200px);
 }
 .brands-tab{
-    /* border: 1px solid #000; */
     display: flex;
-    width: 60%;
-    margin: 0 auto;
-    margin-bottom: clamp(56px, 6vw, 88px);
+    width: 100%;
+    gap: 16px;
+    margin-bottom: clamp(32px, 4vw, 56px);
 }
-.brands-tab li{
+.brands-tab > li{
     flex: 1;
     min-width: 0;
 }
-.brands-tab .button {
+.brands-tab .button{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* width: 100%; */
+    width: 100%;
     cursor: pointer;
 }
-.brands-tab .button li{
-    transition: 0.3s;
-}
-.brands-tab > li.active .button li:nth-child(1) img{
-    background-color: #f2f2f2;
-}
-.brands-tab > li:nth-child(1).active img {
-    content: url(../images/food/brands-b-1.png);
-}
-.brands-tab > li:nth-child(2).active img{
-    content: url(../images/food/brands-b-2.png);
-}
-.brands-tab > li:nth-child(3).active img{
-    content: url(../images/food/brands-b-3.png);
-}
-.brands-tab > li:nth-child(4).active img{
-    content: url(../images/food/brands-b-4.png);
-}
-.brands-tab .button li:nth-child(1) {
+.brands-tab .button > li{
     width: 100%;
-    display: flex;
-    justify-content: center;
-}
-.brands-tab .button li:nth-child(1) img {
-    /* display: block; */
-    width: 60%;
-    aspect-ratio: 1;
-    height: auto;
-    padding: 25px;
+    min-height: 48px;
+    padding: 12px 16px;
     box-sizing: border-box;
-    border-radius: 50%;
-    background-color: #1a1a1a;
-    object-fit: contain;
-    transition: 0.3s;
-}
-.brands-tab .button li:nth-child(2){
-    padding: 10px;
-    font-size: clamp(1.125rem, 1.4vw, 1.3rem);
-    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: clamp(0.875rem, 1.2vw, 1.3rem);
     font-weight: 500;
+    line-height: 1.4;
+    background-color: #fff;
+    color: #1a1a1a;
+    transition: 0.3s;
+    font-weight: 500;
+
+}
+.brands-tab > li.active .button > li{
+    border-color: #1a1a1a;
+    background-color: #1a1a1a;
+    color: #f2f2f2;
 }
 .brands-content ul{
     display: none;
@@ -900,17 +944,36 @@ main{
     object-position: center bottom;
     cursor: pointer;
 }
+.brands-content > ul.active .brands-img img {
+    animation: brands-up 0.6s ease both;
+}
+@keyframes brands-up {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 .brands-content > ul:nth-child(2) > li:first-child .brands-img > img{
     height: auto;
     aspect-ratio: 424 / 544;
     object-fit: cover;
     object-position: center;
 }
-.brands-content > ul:nth-child(4) .brands-img{
+.brands-content > ul:nth-child(4) .brands-img,
+.brands-content > ul:nth-child(4) .brands-text{
     width: clamp(160px, 18vw, 240px);
-    aspect-ratio: 3 / 2;
+}
+.brands-content > ul:nth-child(4) .brands-img{
+    aspect-ratio: 1 / 1;
 }
 .brands-content ul li .brands-text{
+    width: clamp(140px, 15vw, 200px);
+    max-width: 100%;
+    margin: 0 auto;
     text-align: center;
 }
 .brands-content ul li .brands-text > h3{
@@ -919,10 +982,10 @@ main{
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
-    font-size: clamp(1rem, calc(0.5rem + 1.4vw), 1.75rem);
+    font-size: clamp(1rem, 1.8vw, 1.5rem);
     line-height: 1.4;
     margin-top: clamp(12px, 2vw, 20px);
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 .brands-content ul li .brands-text .brands-line{
     height: 3px;
@@ -935,7 +998,7 @@ main{
     height: 3px;
     background-color: #1a1a1a;
     position: absolute;
-    left: 50%; bottom: -13px;
+    left: 50%; bottom: -11px;
     transition: 0.3s;
 }
 .brands-content ul li:hover .brands-text > h3::after{
@@ -943,8 +1006,8 @@ main{
     left: 0;
 }
 .brands-content ul li .brands-text > p{
-    font-size: clamp(0.8125rem, 1.4vw, 1.3rem);
-    margin-top: clamp(12px, 2vw, 24px);
+    font-size: clamp(0.8125rem, 1.2vw, 1.125rem);
+    margin-top: 12px;
     line-height: 1.6;
 }
 .brands-btn{
@@ -963,7 +1026,7 @@ main{
     box-sizing: border-box;
     min-height: 48px;
     padding: 0.45em 1.79em;
-    gap: 3.1em;
+    gap: 2rem;
     line-height: 1.4;
     font-family: 'Montagu Slab', serif;
     font-size: clamp(1rem, 1.2vw, 1.4rem);
@@ -997,118 +1060,82 @@ main{
 /* -----------------식문화----------------- */
 .contact{
     width: calc(100% - 60px);
-    max-width: 1440px;
+    max-width: 1380px;
     margin: 0 auto;
-    margin-bottom: clamp(96px, 8vw, 128px);
+    margin-bottom: clamp(112px, 9vw, 144px);
 }
 .contact h1{
-    text-align: center;
-    margin-bottom: clamp(56px, 5vw, 80px);
-    font-size: clamp(2rem, 3.5vw, 3.7rem);
-    font-weight: 500;
+    overflow-wrap: anywhere;
 }
 .contact-list{
     width: 100%;
-    margin: 0 auto;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    padding: 65px 24px;
+    border-top: 1px solid #ccc;
 }
 .contact-list > li{
-    position: relative;
-    flex: none;
-    width: 30%;
-    min-width: 0;
-    overflow: hidden;
-    box-shadow: -18px -18px 0 #d8d4cd, 0 24px 24px -18px rgba(0, 0, 0, 0.4);
-    cursor: pointer;
+    border-bottom: 1px solid #ddd;
 }
-.contact-list > li > img:nth-child(2){
-    display: none;
+.contact-link{
+    display: flex;
+    align-items: center;
+    gap: clamp(20px, 2.2vw, 32px);
+    padding: 10px 8px;
 }
-.contact-list li .list-1{
-    background-image: url(../images/food/icon1-1.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100% auto;
-    width: 100%;
-    aspect-ratio: 464 / 629;
-}
-.contact-list li .list-2{
-    background-image: url(../images/food/icon2-2.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100% auto;
-    width: 100%;
-    aspect-ratio: 464 / 629;
-}
-.contact-list li .list-3{
-    background-image: url(../images/food/icon3-3.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100% auto;
-    width: 100%;
-    aspect-ratio: 464 / 629;
+.contact-num{
+    width: 32px;
+    flex-shrink: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #777;
 }
 .contact-info{
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    padding: 24px;
-    box-sizing: border-box;
-    background-color: rgba(0, 0, 0, 0.45);
-    color: #f2f2f2;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-.contact-info > img{
-    width: 56px;
-    height: auto;
-    filter: brightness(0) invert(1);
-}
-.contact-info .info-txt{
-    width: 100%;
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
 }
 .contact-info .info-txt h3{
-    font-size: clamp(1.125rem, 1.5vw, 1.5rem);
-    margin-bottom: 20px;
-    line-height: 1.5;
-}
-.contact-mobile-br{
-    display: none;
+    font-size: clamp(1.125rem, 1.8vw, 1.5rem);
+    font-weight: 500;
+    margin-bottom: 8px;
+    line-height: 1.4;
 }
 .contact-info .info-txt p{
-    font-size: clamp(0.875rem, 1.2vw, 1.3rem);
-    line-height: 1.5;
+    font-size: clamp(0.875rem, 1.2vw, 1rem);
+    line-height: 1.7;
+    color: #666;
 }
-.contact-list > li:hover .contact-info{
-    opacity: 1;
+.contact-list .list-1{
+    background-image: url(../images/food/icon1-1.png);
+}
+.contact-list .list-2{
+    background-image: url(../images/food/icon2-2.png);
+}
+.contact-list .list-3{
+    background-image: url(../images/food/icon3-3.png);
+}
+.contact-list .list-1,
+.contact-list .list-2,
+.contact-list .list-3{
+    width: clamp(160px, 23vw, 350px);
+    aspect-ratio: 5 / 2;
+    flex-shrink: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
+.contact-list .list-1 {
+    background-position: center 20%;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.contact-arrow{
+    width: 28px;
+    flex-shrink: 0;
+    font-size: 28px;
+    line-height: 1;
+    text-align: right;
+}
 
 
 
@@ -1121,24 +1148,6 @@ main{
         gap: 20px;
     }
     /* ---------------core value------------ */
-    .core-wrap .core-txt{
-        left: 0;
-        top: 0;
-        width: 30.5%;
-        height: 100%;
-        padding: 20px;
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-    }
-    .core-wrap .core-txt h3{
-        margin-bottom: 36px;
-    }
-    .core-wrap .core-txt p{
-        line-height: 1.6;
-    }
     .core-wrap ul li .core-text h3{
         margin-bottom: 24px;
     }
@@ -1164,37 +1173,19 @@ main{
         height: 36px;
     }
     /* ---------------Brands----------------- */
-    .brands-tab{
-        width: 80%;
-        max-width: 864px;
-    }
-    .brands-tab .button li:nth-child(1) img{
-        padding: 20px;
-    }
-    /* -----------------식문화----------------- */
-    .contact-info{
-        padding: 16px;
-        gap: 12px;
-    }
-    .contact-info .info-txt h3{
-        margin-bottom: 12px;
-    }
 }
 
 @media (max-width: 1280px){
+    .food-info .food-btn,
+    .brands-btn{
+        font-size: 0.875rem;
+    }
     main{
     padding-top: 80px;
     }
 }
 
-
-
-
-
-
-
 @media (max-width: 1024px){
-    /* 히어로 로고 캐러셀 */
     .hero-bg{
         background-image: url(../images/food/hero-tablet.png);
         background-size: cover;
@@ -1260,7 +1251,6 @@ main{
     .hero .hero-brands ul li.active > img:nth-child(2){
         filter: brightness(0);
     }
-    /* 캐러셀에서는 배경 없는 글자 로고 사용 */
     .hero .hero-brands ul li:nth-child(7) > img:nth-child(2){
         content: url(../images/food/food-text3.png);
     }
@@ -1323,7 +1313,11 @@ main{
     }
     /* ---------------core value------------ */
     .core-wrap .core-txt h3{
-        margin-bottom: 28px;
+        font-size: clamp(1rem, 2.3vw, 1.5rem);
+    }
+    .core-wrap .core-txt p{
+        font-size: clamp(0.9375rem, calc(1.7vw + 1px), 1.1875rem);
+        line-height: 1.6;
     }
     .core-wrap ul{
         gap: 12px;
@@ -1333,13 +1327,17 @@ main{
         padding: 0 12px;
     }
     .core-wrap ul li .core-text h3{
+        font-size: clamp(1.125rem, 2.6vw, 1.625rem);
         margin-bottom: 20px;
     }
     .core-wrap ul li:nth-child(2) .core-text h3{
-        letter-spacing: normal;
+        font-size: clamp(1rem, 2.4vw, 1.375rem);
     }
     .core-wrap ul li .core-text p{
+        font-size: clamp(0.8125rem, calc(1.6vw + 1px), 1.0625rem);
         line-height: 1.6;
+        word-break: keep-all;
+        overflow-wrap: anywhere;
     }
     /* ------------------Food ON------------------ */
     .food-info{
@@ -1361,6 +1359,41 @@ main{
     .tab-menu li{
         height: 40px;
     }
+    .tab-menu > li:nth-child(1).active::after {
+        left: min(2.694%, 5.926px);
+        width: 94.613%;
+        max-width: 208.148px;
+    }
+    .tab-menu > li:nth-child(2).active::after {
+        left: min(2.867%, 5.818px);
+        width: 94.982%;
+        max-width: 192.727px;
+    }
+    .tab-menu > li:nth-child(3).active::after {
+        left: min(2.604%, 4.545px);
+        width: 85.417%;
+        max-width: 149.091px;
+    }
+    .tab-menu > li:nth-child(5).active::after {
+        left: min(3.861%, 7.547px);
+        width: 92.278%;
+        max-width: 180.377px;
+    }
+    .tab-menu > li:nth-child(7).active::after {
+        left: min(7.051%, 9.167px);
+        width: 91.667%;
+        max-width: 119.167px;
+    }
+    .tab-menu > li:nth-child(8).active::after {
+        left: min(11.404%, 7.761px);
+        width: 77.193%;
+        max-width: 52.537px;
+    }
+    .tab-menu > li:nth-child(9).active::after {
+        left: min(9.091%, 10.833px);
+        width: 81.119%;
+        max-width: 96.667px;
+    }
     .tab-menu::before{
         left: 0;
         top: 20px;
@@ -1372,20 +1405,6 @@ main{
         height: 8px;
     }
     /* ---------------Brands----------------- */
-    .brands-tab{
-        width: 90%;
-        margin-bottom: 64px;
-    }
-    .brands-tab .button li:nth-child(1) img{
-        width: 70%;
-        max-width: 150px;
-        padding: 24px;
-    }
-    .brands-tab .button li:nth-child(2){
-        padding: 0;
-        margin-top: 24px;
-        line-height: 1.5;
-    }
     .brands-content ul{
         flex-wrap: wrap;
         gap: 56px 40px;
@@ -1394,7 +1413,8 @@ main{
         flex: none;
         width: calc(50% - 20px);
     }
-    .brands-content ul li .brands-img{
+    .brands-content ul li .brands-img,
+    .brands-content ul li .brands-text{
         width: clamp(160px, 25vw, 220px);
     }
     .brands-content ul li .brands-text > h3{
@@ -1402,7 +1422,7 @@ main{
     }
     .brands-content ul li .brands-text > p{
         font-size: clamp(0.875rem, 1.8vw, 1.125rem);
-        margin-top: 24px;
+        margin-top: 12px;
         line-height: 1.6;
     }
     .brands-btn{
@@ -1413,45 +1433,16 @@ main{
         margin-bottom: 56px;
         line-height: 1.5;
     }
-    .contact-list{
-        padding: 45px 16px;
+    .contact-link{
+        gap: 20px;
+        padding: 24px 0;
     }
-    .contact-list > li{
-        box-shadow: -12px -12px 0 #d8d4cd,
-                    0 18px 20px -16px rgba(0, 0, 0, 0.4);
-    }
-    .contact-list li .list-1,
-    .contact-list li .list-2,
-    .contact-list li .list-3{
-        height: clamp(270px, 37.8vw, 378px);
-        aspect-ratio: auto;
-        background-size: cover;
-    }
-    .contact-info{
-        padding: 12px;
-        gap: 12px;
-        opacity: 1;
-        transition: none;
-    }
-    .contact-info > img{
-        width: 32px;
-    }
-    .contact-info .info-txt h3{
-        font-size: clamp(0.875rem, 1.8vw, 1.125rem);
-        margin-bottom: 12px;
-    }
-    .contact-info .info-txt p{
-        font-size: clamp(0.75rem, 1.4vw, 0.875rem);
-        line-height: 1.6;
-        word-break: keep-all;
-        overflow-wrap: anywhere;
+    .contact-list .list-1,
+    .contact-list .list-2,
+    .contact-list .list-3{
+        width: clamp(96px, 24vw, 200px);
     }
 }
-
-
-
-
-
 
 @media (max-width: 800px){
     .hero,
@@ -1467,45 +1458,41 @@ main{
         margin-bottom: 56px;
     }
     /* ---------------core value------------ */
+    .core-wrap .core-txt{
+        padding: 12px;
+    }
+    .core-wrap .core-txt h3{
+        font-size: clamp(0.75rem, 2.3vw, 1.125rem);
+    }
     .core-wrap .core-txt p{
-        font-size: clamp(0.875rem, 1.7vw, 1.125rem);
+        font-size: clamp(0.75rem, calc(1.7vw + 1px), 0.9375rem);
     }
-    .core-wrap ul li .core-text h3{
-        font-size: clamp(1.125rem, 2.8vw, 1.5rem);
+    .core-wrap ul li .core-text{
+        top: 13%;
+        padding: 0 6px;
     }
+    .core-wrap ul li .core-text h3,
     .core-wrap ul li:nth-child(2) .core-text h3{
-        font-size: clamp(1rem, 2.4vw, 1.375rem);
+        font-size: clamp(0.75rem, 2.2vw, 1.125rem);
+        margin-bottom: clamp(8px, 1.5vw, 12px);
     }
     .core-wrap ul li .core-text p{
-        font-size: clamp(0.575rem, 1.7vw, 1rem);
+        font-size: clamp(0.6875rem, calc(1.7vw + 1px), 0.9375rem);
+        line-height: 1.5;
     }
     /* ---------------Brands----------------- */
-    .brands-tab .button li:nth-child(2){
-        font-size: clamp(0.875rem, 1.8vw, 1.125rem);
-    }
-    /* -----------------식문화----------------- */
-    .contact-info{
+    .brands-tab{
         gap: 8px;
     }
-    .contact-info > img{
-        width: 28px;
+    .brands-tab .button > li{
+        padding: 12px 8px;
+        font-size: clamp(0.75rem, 1.8vw, 0.875rem);
     }
-    .contact-info .info-txt h3{
-        font-size: clamp(1rem, 2vw, 1.125rem);
-    }
-    .contact-info .info-txt p{
-        font-size: clamp(0.75rem, 1.6vw, 0.875rem);
+    /* -----------------식문화----------------- */
+    .contact-link{
+        gap: 16px;
     }
 }
-
-
-
-
-
-
-
-
-
 
 @media (max-width: 600px){
     /* --------------매인영역---------------- */
@@ -1593,7 +1580,7 @@ main{
         margin-bottom: 16px;
     }
     .m-taste-wrap .core-txt p{
-        font-size: clamp(0.875rem, 3.6vw, 1rem);
+        font-size: clamp(0.9375rem, calc(3.6vw + 1px), 1.0625rem);
         line-height: 1.6;
     }
     .m-con-wrap{
@@ -1619,13 +1606,13 @@ main{
         opacity: 1;
         background-color: rgba(0, 0, 0, 0.45);
         color: #fff;
-    }   
+    }
     .m-con-wrap .core-text h3{
         font-size: clamp(1.25rem, 5vw, 1.5rem);
         margin-bottom: 16px;
     }
     .m-con-wrap .core-text p{
-        font-size: clamp(0.875rem, 3.6vw, 1rem);
+        font-size: clamp(0.9375rem, calc(3.6vw + 1px), 1.0625rem);
         line-height: 1.6;
     }
     /* ------------------Food ON------------------ */
@@ -1674,47 +1661,14 @@ main{
         font-size: clamp(1.5rem, 6vw, 2rem);
     }
     .brands-tab{
-        width: 100%;
-        flex-direction: row;
-        flex-wrap: nowrap;
         gap: 8px;
-        margin-bottom: clamp(40px, 9vw, 48px);
+        margin-bottom: 32px;
     }
-    .brands-tab > li{
-        flex: 1;
-        min-width: 0;
-        transform: none;
-    }
-    .brands-tab .button li{
-        flex: none;
-    }
-    .brands-tab .button li:nth-child(1) img{
-        width: 120px;
-        max-width: 100%;
-        padding: 20px;
-        display: none;
-    }
-    .brands-tab .button li:nth-child(2){
-        width: 100%;
-        height: 56px;
-        box-sizing: border-box;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 0;
-        font-size: clamp(0.75rem, 2.5vw, 0.875rem);
-        line-height: 1.4;
-        text-align: center;
-        overflow-wrap: anywhere;
-        border: 1px solid #1A1A1A;
-        background-color: #1A1A1A;
-        border-radius: 10px;
+    .brands-tab .button > li{
+        height: 48px;
         padding: 8px 4px;
-        color: #f2f2f2;
-    }
-    .brands-tab > li.active .button li:nth-child(2){
-        background-color: #f2f2f2;
-        color: #1A1A1A;
+        font-size: clamp(0.6875rem, 2.5vw, 0.875rem);
+        overflow-wrap: anywhere;
     }
     .brands-content{
         display: block;
@@ -1727,15 +1681,21 @@ main{
     .brands-content > ul > li{
         width: calc(50% - 8px);
     }
-    .brands-content ul li .brands-img{
+    .brands-content ul li .brands-img,
+    .brands-content ul li .brands-text{
         width: clamp(120px, 32vw, 190px);
     }
-    .brands-content > ul:nth-child(4) .brands-img{
+    .brands-content > ul:nth-child(4) .brands-img,
+    .brands-content > ul:nth-child(4) .brands-text{
         width: 100%;
         max-width: 220px;
     }
     .brands-content ul li .brands-text > h3{
         font-size: clamp(1rem, 3.8vw, 1.25rem);
+        min-height: 2.8em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         margin-top: clamp(12px, 3vw, 18px);
     }
     .brands-content ul li .brands-text > p{
@@ -1750,7 +1710,6 @@ main{
         display: flex;
         margin-top: clamp(36px, 9vw, 48px);
         padding: 0.65em 1.2em;
-        gap: 1.2em;
         font-size: clamp(0.75rem, 2.8vw, 0.875rem);
     }
     /* -----------------식문화----------------- */
@@ -1759,57 +1718,27 @@ main{
         width: calc(100% - 40px);
     }
     .contact h1{
-        font-size: clamp(1.125rem, 4.8vw, 1.5rem);
+        font-size: clamp(1.25rem, 5vw, 1.75rem);
     }
-    .contact-list{
-        flex-direction: column;
-        gap: 24px;
-        padding: 0;
+    .contact-link{
+        gap: clamp(8px, 2vw, 12px);
+        padding: 24px 0;
     }
-    .contact-list > li{
-        flex: none;
-        width: 100%;
-        height: 180px;
-        transform: none;
-        box-shadow: none;
-    }
-    .contact-info > img,
-    .contact-info .info-txt{
-        transform: none;
-    }
-    .contact-list li .list-1{
-        height: 100%;
-        aspect-ratio: auto;
-        background-size: cover;
-    }
-    .contact-list li .list-2{
-        height: 100%;
-        aspect-ratio: auto;
-        background-size: cover;
-    }
-    .contact-list li .list-3{
-        height: 100%;
-        aspect-ratio: auto;
-        background-size: cover;
-    }
-    .contact-info{
-        padding: 12px;
-        gap: 6px;
-    }
-    .contact-info > img{
-        width: 24px;
+    .contact-num{
+        width: 18px;
+        font-size: 12px;
     }
     .contact-info .info-txt h3{
-        font-size: clamp(0.875rem, 4vw, 1rem);
+        font-size: clamp(0.9375rem, 3.8vw, 1.125rem);
         margin-bottom: 6px;
-        line-height: 1.4;
-    }
-    .contact-mobile-br{
-        display: block;
     }
     .contact-info .info-txt p{
         font-size: clamp(0.75rem, 3vw, 0.875rem);
-        line-height: 1.5;
+        line-height: 1.6;
+    }
+    .contact-arrow{
+        width: 22px;
+        font-size: 22px;
     }
 }
 
@@ -1828,39 +1757,217 @@ main{
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* -------footer-------- */
 
 footer {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 100px 0 40px;
     background-color: var(--blackTxt);
     color: #f2f2f2;
 }
 
+.footer-inner {
+    width: min(85%, 1440px);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 56px 40px;
+}
+
+.footer-gnb-wrap {
+    display: flex;
+    gap: 50px;
+}
+
+.footer-gnb > ul,
+.footer-inform {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.footer-gnb {
+    font-size: 32px;
+    line-height: 42.9px;
+}
+
+.footer-inform {
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1.95;
+}
+
+.footer-etc {
+    width: 234px;
+    align-self: end;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+footer .search-wrap {
+    position: relative;
+    height: 52px;
+}
+
+.footer-search {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 0 48px 8px 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+}
+
+footer .search-wrap > div:first-of-type {
+    position: absolute;
+    right: 0;
+    top: 0;
+    pointer-events: none;
+}
+
+footer .search-wrap > div:first-of-type img {
+    width: 40px;
+    height: 40px;
+}
+
+footer .search-wrap > div:last-of-type {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    pointer-events: none;
+}
+
+footer .search-wrap > div:last-of-type img {
+    display: block;
+    width: 100%;
+    height: 2px;
+    transform: rotateY(180deg);
+}
+
+footer .sns-wrap {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+}
+
+footer .sns-wrap a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+}
+
+footer .sns-wrap img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+
 .footer-logo {
+    grid-column: 1 / -1;
     color: #f2f2f2;
+    font-family: var(--engFont);
+    font-size: min(14.2vw, 248px);
+    font-weight: normal;
+    line-height: 0.9;
+    letter-spacing: -0.035em;
+    white-space: nowrap;
+    text-align: center;
+}
+
+footer a:focus-visible,
+.footer-search:focus-visible {
+    outline: 2px solid #404040;
+    outline-offset: 4px;
+}
+
+/* 태블릿: 두 열 메뉴와 오른쪽 검색·SNS 유지 */
+@media (min-width: 769px) and (max-width: 1099px) {
+    footer {
+        padding: 64px 0 32px;
+    }
+
+    .footer-inner {
+        width: 92%;
+        gap: 40px 24px;
+    }
+
+    .footer-gnb-wrap { gap: 32px; }
+    .footer-gnb { font-size: 20px; line-height: 25.9px; }
+    .footer-inform { font-size: 14px; line-height: 1.85; }
+    .footer-gnb > ul, .footer-inform { gap: 22px; }
+    .footer-etc { width: 150px; align-self: stretch; justify-content: space-between; }
+    footer .sns-wrap { gap: 12px; }
+    footer .sns-wrap a { width: 28px; height: 28px; }
+    footer .search-wrap > div:first-of-type img { width: 32px; height: 32px; }
+    .footer-logo { font-size: 15vw; }
+}
+
+/* 모바일: 검색 → 로고 → 메뉴 → 안내·SNS */
+@media (max-width: 768px) {
+    footer {
+        padding: 20px 0 24px;
+    }
+
+    .footer-inner {
+        width: 88%;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 24px 12px;
+    }
+
+    .footer-gnb-wrap,
+    .footer-gnb-wrap > li:last-child,
+    .footer-etc {
+        display: contents;
+    }
+
+    footer .search-wrap {
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: end;
+        width: 100px;
+        height: 30px;
+    }
+
+    footer .search-wrap > div:first-of-type img { width: 26px; height: 26px; }
+    .footer-search { padding-right: 30px; }
+    .footer-logo { grid-row: 2; font-size: 14.5vw; margin-bottom: 20px; }
+    .footer-gnb { grid-column: 1 / -1; grid-row: 3; font-size: 14px; line-height: 1.5; }
+    .footer-gnb > ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 12px 8px;
+    }
+    .footer-gnb a { white-space: nowrap; }
+
+    .footer-inform {
+        grid-column: 1 / -1;
+        grid-row: 4;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px 14px;
+        font-size: 14px;
+        line-height: 1.5;
+        padding-right: 100px;
+    }
+
+    .footer-etc > li:last-child {
+        grid-column: 2;
+        grid-row: 4;
+        align-self: end;
+    }
+
+    footer .sns-wrap { gap: 7px; }
+    footer .sns-wrap a { width: 18px; height: 18px; }
 }
