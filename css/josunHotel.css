@@ -263,14 +263,14 @@ main {
 
 /* section {display: none;} */
 
-section{margin-bottom: 120px;}
+section{margin-bottom: 200px;}
 
 
 .mainhero-wrap {
   display: block;
   width: 100%; 
   aspect-ratio: 1920 / 1280;
-  margin-bottom: 120px;
+  margin-bottom: 200px;
 
   background-image: url(../images/hotel/heroImg.png);
   background-size: cover; background-position: center center;
@@ -370,7 +370,7 @@ section{margin-bottom: 120px;}
 
 .facility-wrap {
   width: 100%;
-  margin: 0 auto 120px;
+  margin: 0 auto 200px;
   display: flex; flex-direction: column;
   position: relative;
 }
@@ -589,7 +589,7 @@ section{margin-bottom: 120px;}
 
 .mobile-dining{
   width: min(85%, 1440px); margin: 0 auto;
-  margin-bottom: 120px;
+  margin-bottom: 200px;
 }
 
 .mobile-dining .dining-tit {
@@ -689,7 +689,7 @@ section{margin-bottom: 120px;}
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-bottom: 120px;
+  margin-bottom: 200px;
 }
 
 .mobile-act-cont > ul {
@@ -724,7 +724,7 @@ section{margin-bottom: 120px;}
 
 .act-wrap {
   width: min(85%, 1440px);
-  margin: 0 auto 120px;
+  margin: 0 auto 200px;
   display: none;
 }
 

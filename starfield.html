@@ -45,7 +45,9 @@
                 <img class="logo" src="images/starfield_images/starfield_main_logo.png" alt="스타필드 로고">
 
 <!--------------- 모바일 닫기 버튼 ------------------>
-                <img class="close" src="images/starfield_images/icon_close.svg" alt="모바일 메뉴버튼">
+                <button class="close" type="button">
+                    <img src="images/starfield_images/icon_close.svg" alt="모바일 메뉴 닫기">
+                </button>
 
 
 
@@ -107,9 +109,32 @@
             <img class="icon-menu" src="images/starfield_images/icon-menu.svg" alt="모바일 메뉴버튼">
 
 <!---------------- pc sub back  ------------->
-            <div class="sub-bg"></div>
+            
         </div>
-    
+        <!-- sub menu 배경 -->
+        <div class="sub-bg"></div>
+
+        <div class="search-panel">
+
+            <button class="search-close" type="button">
+                <img src="images/starfield_images/icon_close.svg" alt="검색 영역 닫기">
+            </button>
+
+            <form>
+                <input type="search" name="keyword" placeholder="검색어를 입력하세요">
+
+            <button>
+                <img class="search" src="images/starfield_images/search.svg" alt="검색">
+            </button>
+            </form>
+
+            <ul class="keywords">
+                <li><button type="button">별마당 도서관</button></li>
+                <li><button type="button">주차 안내</button></li>
+                <li><button type="button">레스토랑</button></li>
+            </ul>
+
+        </div >
     </header>
 
 
@@ -257,15 +282,15 @@
                 <li>
 
                     <p>
-                        SELECTED EVENT · 10.21 WED <br>
-                        <strong>김대수 강연</strong> <br><br>
+                        <b>SELECTED EVENT · 10.21 WED</b> <br>
+                        <strong>김대수 강연</strong>
 
                         <span>
                             〈어텐션: 나만의 집중력 설계하기〉 <br>
-                            PM 2:00 | 4F 별마당 도서관 <br><br>
+                            PM 2:00 | 4F 별마당 도서관
                         </span>
 
-                        04 / 04
+                        <span>04 / 04</span>
                     </p>
 
                 </li>
@@ -274,15 +299,15 @@
                 <li>
             
                     <p>
-                        SELECTED EVENT · 10.24 SAT <br>
-                        <strong>뮤지컬 〈피터팬〉</strong> <br>
+                        <b>SELECTED EVENT · 10.24 SAT</b> <br>
+                        <strong>뮤지컬 〈피터팬〉</strong>
 
                         <span>
                             상상 속 네버랜드로 떠나는 환상적인 모험 <br>
-                            PM 2:00 · 5:00 | 3F 별마당 키즈 <br>
+                            PM 2:00 · 5:00 | 3F 별마당 키즈
                         </span>
 
-                        01 / 04
+                        <span>01 / 04</span>
                     </p>
                         
                 </li>
@@ -291,28 +316,28 @@
 
                 <li>
                     <p>
-                        SELECTED EVENT · 10.28 WED <br>
-                        <strong>원소윤 강연</strong> <br>
+                        <b>SELECTED EVENT · 10.28 WED</b> <br>
+                        <strong>원소윤 강연</strong>
 
                         <span>
                             〈읽고 쓰는 삶〉 <br>
-                            PM 2:00 | 4F 별마당 도서관<br>
+                            PM 2:00 | 4F 별마당 도서관
                         </span>
 
-                        02 / 04
+                        <span>02 / 04</span>
                     </p>
                 </li>
                 <li>
                     <p>
-                        SELECTED EVENT · 10.31 SAT<br>
-                        <strong>버블쇼 〈비눗방울맨〉</strong> <br>
+                        <b>SELECTED EVENT · 10.31 SAT</b><br>
+                        <strong>버블쇼 〈비눗방울맨〉</strong>
 
                         <span>
                             형형색색 비눗방울이 펼치는 환상적인 무대!<br>
-                            PM 2:00 · 5:00 | 3F 별마당 키즈<br>
+                            PM 2:00 · 5:00 | 3F 별마당 키즈
                         </span>
 
-                        03 / 04
+                        <span>03 / 04</span>
                     </p>
                 </li>
 
@@ -348,7 +373,7 @@
 
                     <div>
                         <span>READ</span> <br>
-                        <span>BYEOLMADANG KIDS</span>
+                        <span>BYEOLMADANG</span>
                     </div>
                     
                 </li>
@@ -369,7 +394,7 @@
 
                     <div>
                         <span>DISCOVER</span> <br>
-                        <span>TOY KINGDOM</span>
+                        <span>TOY</span>
                     </div>
                 </li>
 
@@ -379,14 +404,14 @@
 
                     <div>
                         <span>IMAGINE</span> <br>
-                        <span>JJAEKKAKSEOM</span>
+                        <span>JJAEKKAK</span>
                     </div>
                 </li>
 
                 <li>
                     <img src="images/starfield_images/kids-champion.png" alt="챔피언 더 블랙벨트">
                     <a href="#" class="kids-btn">자세히 보기 <img src="images/starfield_images/icon_arrow right.svg" alt="화살표"></a>
-                    <span>05</span>
+                    
 
                     <div>
                         <span>MOVE</span> <br>
