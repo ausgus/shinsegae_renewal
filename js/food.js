@@ -113,8 +113,13 @@ $(document).ready(function(){
         $("body").css("overflow", "");
     });
 
-// 메뉴 제목을 누르면 하위 메뉴 펼치기 / 접기
+// 메뉴 제목을 누르면 하위 메뉴 펼치기 / 접기, 열린 메뉴에 주소가 있으면 이동
     $(".menu-bar > ul > li > a").click(function(e){
+        let href = $(this).attr("href");
+        if (href && href !== "#" && $(this).next(".sub-menu-wrap").is(":visible")) {
+            return;
+        }
+
         e.preventDefault();
         $(".menu-bar .sub-menu-wrap").not($(this).next()).stop().slideUp(200);
         $(this).next(".sub-menu-wrap").stop().slideToggle(200);
@@ -169,15 +174,16 @@ $(document).ready(function(){
             if(i >= total){ i = 0; }
 
             foodTabs.eq(i).trigger("click");
-        }, 3000);
+        }, 1800);
     }
 
-    foodAuto();
-
-    foodTabs.on("mouseenter", function(){
-        clearInterval(foodTimer);
+    
+    foodTabs.on("click mouseenter", function(){
+        foodAuto();
     });
-
+    
+    foodAuto();
+    
 // 모바일 Food ON 이전 / 다음
     $(".food-arrow > div").click(function(){
         let i = foodContents.filter(".active").index();
